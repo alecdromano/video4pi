@@ -1,0 +1,24 @@
+# This file should be stored on your USB device. Edit the variables below to
+# customize the Video4Pi script's behavior for your needs.
+# ------------------------------------------------------------------------------
+
+# Setting to false prevents playback from starting. Useful for debugging.
+    run="true"
+
+# When set to true, displays are synchronized. When set to false, displays
+# act independently. Note: if shuffle is false, displays will be identical
+# regardless of the sync setting.
+    sync="false"
+
+# When true, videos are played at random. When false, videos are selected by
+# filename in alphanumeric order.
+    shuffle="true"
+
+# Sets a delay period between videos (in seconds).
+    between="0"
+
+# ------------------------------------------------------------------------------
+# CAUTION: Settings below this line should not be changed unless you know
+# exactly what you're doing! Faulty values may cause the script to malfunction.
+    screen1_options="--display=2" # omxplayer arguments for 1st display
+    screen2_options="--display=7 --no-keys" # omxplayer arguments for 2nd display
