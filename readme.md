@@ -1,3 +1,5 @@
+![Demonstration drawing](/guide_pictures/Video4PiMain.jpg)
+
 In 2020, I was tasked with creating digital signage for a Jeep dealership. The client wanted to mount eight TVs — four on either side of their vehicle showroom — and have them play a collection of ~400 lifestyle videos asynchronously. Right away, the thought of using Raspberry Pis came to mind. The Pi 4b, with its dual-monitor capability, seemed like the obvious choice for this project. I bought four of them, intending to drive two TVs with each.
 
 Solid plan, as you'll no doubt agree. In fact, the plan was so solid, I was positive someone else had done it already. But no! To my surprise, no one had. Some solutions existed, but none supported two displays. So, I took on the challenge myself. In the end, I was able to turn the Pi 4b into a totally hassle-free, plug-and-play video looping device. Read on to learn how you can do the same.
@@ -267,13 +269,13 @@ After that last step, you probably tried to test the parent script... only to be
 
 Bring up the raspi-config utility using `sudo raspi-config`.
 
-![Alt text](/assets/img/blog/Video4PiHowTo01.jpg "Title")
+![Raspberry Pi Software Configuration Tool 1](/guide_pictures/Video4PiHowTo01.jpg)
 
 Beginning from the main menu, select “Advanced Options” followed by “Memory Split.” When prompted, enter 512 as the new value and select “Ok” to confirm the change. This will allocate 512 MB of system memory to the GPU.
 
 This is the maximum amount the OS will allow, so don't bother entering a higher number. It will just reset to default. On the other hand, you're welcome to try allocating less memory, but I don't advise it. Some videos are more demanding of the GPU than others. Giving it all the memory you can spare guarantees a seamless experience.
 
-![Alt text](/assets/img/blog/Video4PiHowTo02.jpg "Title")
+![Raspberry Pi Software Configuration Tool 2](/guide_pictures/Video4PiHowTo02.jpg)
 
 When you're finished with that, reboot. Now, try running the parent script again. With more available memory, the script should work as expected and you should get output on both displays. We're almost done! Use Ctrl+C to exit the script before moving on to the final steps.
 
@@ -293,7 +295,7 @@ Luckily, we can avoid that outcome by making the Pi's filesystem effectively rea
 
 Launch *raspi-config* again using `sudo raspi-config`. Just like before, select “Advanced Options” from the main menu. From the advanced menu, select “Overlay FS” and answer yes to all of the prompts. When asked if you'd like to reboot, do so.
 
-![Alt text](/assets/img/blog/Video4PiHowTo03.jpg "Title")
+![Raspberry Pi Software Configuration Tool 1](/guide_pictures/Video4PiHowTo03.jpg)
 
 With OverlayFS enabled, you can count on your Raspberry Pi to work reliably no matter what. Best of all, it's completely reversible. If you want to write changes to the disk later on, simply use *raspi-config* to disable OverlayFS, returning the root filesystem to normal.
 
